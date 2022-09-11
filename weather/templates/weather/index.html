@@ -2,5 +2,19 @@
 {% block title %}Weather Application{% endblock title %}
 
 {% block body %}
-<h1>Weather</h1>
+<center><h1>Weather</h1></center>
+
+
+<div class="container w-50">
+    <form action="" method="post">
+        {% csrf_token %}
+        <input class="form-control me-2" type="text" placeholder="City" name="city" aria-label="City">
+    </form>
+
+    <h2>{{ city|title }}</h2>
+    <h3>Country Code:&emsp13; {{ data.country_code }}</h3>
+    <h3>Temperature:&emsp13; {{ data.temp }}</h3>
+    <h3>Pressure:&emsp13; {{ data.pressure }}</h3>
+    <h3>Humidity:&emsp13; {{ data.humidity }}</h3>    
+</div>
 {% endblock body %}
